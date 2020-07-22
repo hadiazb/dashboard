@@ -6,12 +6,17 @@ import {
 } from 'react-router-dom';
 import Home from '../containers/Home';
 import NotFound from '../containers/NotFound';
+import Propiedades from '../containers/PropiedadesKey';
 
-// <Route exact path='/propiedades/:key' component={Propiedades} />
 function App() {
 	return (
 		<Router>
 			<Switch>
+				<Route
+					exact
+					path='/propiedades/:key'
+					component={Propiedades}
+				/>
 				<Route exact path='/' component={Home} />
 				<Route component={NotFound} />
 			</Switch>
