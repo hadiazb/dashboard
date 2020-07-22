@@ -1,11 +1,20 @@
 import React from 'react';
+import {
+	BrowserRouter as Router,
+	Switch,
+	Route,
+} from 'react-router-dom';
+import Home from '../containers/Home'
+
 
 function App() {
-  return (
-    <div>
-      <h1>Hola mundo!!!</h1>
-    </div>
-  );
+	return (
+		<Router>
+			<Switch>
+				<Route exact path='/' component={Home} />
+			</Switch>
+		</Router>
+	);
 }
 
 export default App;
