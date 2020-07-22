@@ -1,5 +1,24 @@
-.table {
-  border: 1px solid red;
-  margin: 20px auto;
-  width: 90%;
+.eye-solid2.icon {
+  color: #000000b6;
+  width: 20px;
+  height: 20px;
+  border-radius: 70% 15%;
+  background-color: currentColor;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.eye-solid2.icon:before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  color: white;
+  background-color: currentColor;
+}
+
+
+

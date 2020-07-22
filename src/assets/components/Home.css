@@ -5,5 +5,12 @@
 
 .tabla {
   width: 100%;
-  padding: 20px;
+  height: 92vh;
+  padding: 10px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.tabla h3 {
+  margin-bottom: 10px;
 }

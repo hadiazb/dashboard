@@ -11,6 +11,7 @@ const Home = () => {
 			<div className='home'>
 				<Menu />
 				<div className='tabla'>
+					<h3>Tabla de datos</h3>
 					<Tabla />
 				</div>
 			</div>

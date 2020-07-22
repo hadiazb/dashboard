@@ -1,22 +1,3 @@
-// import React from 'react';
-// import '../assets/components/Table.css';
-
-// export default function Tabla() {
-// 	const [state, setState] = React.useState({
-// 		columns: [
-// 			{ title: 'N° ID', field: 'ID', type: 'numeric' },
-// 			{ title: 'Entidad Federativa', field: 'state' },
-// 			{ title: 'Municipio', field: 'municipio' },
-// 			{ title: 'Tipo de inmueble', field: 'inmueble' },
-// 			{ title: 'Ubicación', field: 'ubicacion' },
-// 			{
-// 				title: 'Problemática jurídica',
-// 				field: 'problematica',
-// 			},
-// 		],
-// 		data: [{}],
-// 	});
-
 import React from 'react';
 import {
 	withStyles,
@@ -29,15 +10,18 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Data from '../store/data';
+import '../assets/components/Table.css';
+import { Link } from 'react-router-dom';
 
 const StyledTableCell = withStyles((theme) => ({
 	head: {
 		backgroundColor: theme.palette.common.black,
 		color: theme.palette.common.white,
-		fontSize: 15,
+		fontSize: 14,
 	},
 	body: {
-		fontSize: 14,
+		fontSize: 10,
 	},
 }))(TableCell);
 
@@ -49,51 +33,7 @@ const StyledTableRow = withStyles((theme) => ({
 	},
 }))(TableRow);
 
-function createData(
-	id,
-	state,
-	town,
-	inmueble,
-	location,
-	problem
-) {
-	return { id, state, town, inmueble, location, problem };
-}
-
-const rows = [
-	createData(
-		1,
-		'Quintana Roo',
-		'Cancun',
-		'Comercial',
-		'Calle 10',
-		'no hay'
-	),
-	createData(
-		2,
-		'Quintana Roo',
-		'Cancun',
-		'Comercial',
-		'Calle 10',
-		'no hay'
-	),
-	createData(
-		3,
-		'Quintana Roo',
-		'Cancun',
-		'Comercial',
-		'Calle 10',
-		'no hay'
-	),
-	createData(
-		4,
-		'Quintana Roo',
-		'Cancun',
-		'Comercial',
-		'Calle 10',
-		'no hay'
-	),
-];
+const data = Data;
 
 const useStyles = makeStyles({
 	table: {
@@ -103,7 +43,6 @@ const useStyles = makeStyles({
 
 export default function CustomizedTables() {
 	const classes = useStyles();
-
 	return (
 		<TableContainer component={Paper}>
 			<Table
@@ -112,23 +51,33 @@ export default function CustomizedTables() {
 			>
 				<TableHead>
 					<TableRow>
-						<StyledTableCell>ID</StyledTableCell>
-						<StyledTableCell>Estado</StyledTableCell>
+						<StyledTableCell>NumeroSIAB</StyledTableCell>
+						<StyledTableCell>Entidad Federativa</StyledTableCell>
 						<StyledTableCell>Municipio</StyledTableCell>
-						<StyledTableCell>Inmueble</StyledTableCell>
-						<StyledTableCell>location</StyledTableCell>
-						<StyledTableCell>Problema</StyledTableCell>
+						<StyledTableCell>Tipo Inmueble</StyledTableCell>
+						<StyledTableCell>Ubicacion</StyledTableCell>
+						<StyledTableCell>Problem Juridica</StyledTableCell>
+						<StyledTableCell>Ver</StyledTableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{rows.map((row) => (
-						<StyledTableRow key={row.id}>
-							<StyledTableCell>{row.id}</StyledTableCell>
-							<StyledTableCell>{row.state}</StyledTableCell>
-							<StyledTableCell>{row.town}</StyledTableCell>
-							<StyledTableCell>{row.inmueble}</StyledTableCell>
-							<StyledTableCell>{row.location}</StyledTableCell>
-							<StyledTableCell>{row.problem}</StyledTableCell>
+					{data.map((row, key) => (
+						<StyledTableRow key={row.NumeroSIAB}>
+							<StyledTableCell>{row.NumeroSIAB}</StyledTableCell>
+							<StyledTableCell>
+								{row.EntidadFederativa}
+							</StyledTableCell>
+							<StyledTableCell>{row.Municipio}</StyledTableCell>
+							<StyledTableCell>{row.TipoInmueble}</StyledTableCell>
+							<StyledTableCell>{row.Ubicacion}</StyledTableCell>
+							<StyledTableCell>
+								{row.DescripcionProblematicaJuridica}
+							</StyledTableCell>
+							<StyledTableCell>
+								<Link to={`/propiedades/${key}`}>
+									<div className='eye-solid2 icon'></div>
+								</Link>
+							</StyledTableCell>
 						</StyledTableRow>
 					))}
 				</TableBody>
