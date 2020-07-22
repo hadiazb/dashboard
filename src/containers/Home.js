@@ -1,12 +1,19 @@
 import React, { Fragment } from 'react';
 import Menu from '../components/Menu';
 import Header from '../components/Header';
+import Tabla from '../components/Table';
+import '../assets/components/Home.css';
 
 const Home = () => {
 	return (
 		<Fragment>
 			<Header />
-			<Menu />
+			<div className='home'>
+				<Menu />
+				<div className='tabla'>
+					<Tabla />
+				</div>
+			</div>
 		</Fragment>
 	);
 };

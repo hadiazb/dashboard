@@ -1,0 +1,9 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabla {
+  width: 100%;
+  padding: 20px;
+}

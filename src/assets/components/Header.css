@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(96, 115, 226, 0.972);
+  background-color: black;
 }
 
 .header__anchor {
@@ -19,3 +19,5 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
