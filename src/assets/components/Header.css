@@ -1,15 +1,21 @@
 .header {
-  border: 1px solid black;
   width: 100%;
-  height: 5vh;
+  height: 8vh;
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: indigo;
+  background-color: rgba(96, 115, 226, 0.972);
 }
 
 .header__anchor {
   color: white;
   text-decoration: none;
+}
+
+.header__search {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
