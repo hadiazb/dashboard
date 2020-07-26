@@ -1,5 +1,11 @@
 .main {
   width: 70px;
   height: 92vh;
+  padding-top: 20px;
   background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  color: white;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -17,9 +17,9 @@ const useStyles2 = makeStyles({
 
 const data = Data;
 
-
-export default function Detalle() {
-  const key = 0;
+export default function Detalle(props) {
+	console.log(props.id);
+	const key = props.id;
 	const classes = useStyles2();
 	return (
 		<div className='containerTable'>

@@ -7,6 +7,7 @@ import {
 import Home from '../containers/Home';
 import NotFound from '../containers/NotFound';
 import Propiedades from '../containers/PropiedadesKey';
+import Statistic from '../containers/Statistic';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					component={Propiedades}
 				/>
 				<Route exact path='/' component={Home} />
+				<Route exact path='/estadisticasall' component={Statistic} />
 				<Route component={NotFound} />
 			</Switch>
 		</Router>
